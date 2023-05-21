@@ -1,3 +1,9 @@
+// typed.js
+var typed = new Typed('#element', {
+    strings: ['Full Stack Developer', 'Content Writer', 'Subtitle Writer', 'Virtual Assistant'],
+    typeSpeed: 50,
+  });
+
 // toggle icon navbar
 let menuIcon = document.querySelector('#menu-icon')
 let navbar = document.querySelector('.navbar')
