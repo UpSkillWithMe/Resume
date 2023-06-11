@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Python malware or Virus in just 10 lines of code. In this blog, we will see how to make a simple malware using Python."><meta name="keywords" content="Python, Python malware, Python Virus, Tkinter, Learn Python"><title>How to prank your friends using python - UpSkillWithMe</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/blogpost.css"><link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"><link rel="stylesheet" href="../prism/prism.css"><script src="../prism/prism.js"></script><link rel="icon" type="image/ico" href="../images/logo.png"></head><body><header class="header"><a href="../index.html" class="logo">UpSkillWithMe.<span class="animate" style="--i:1"></span></a><div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span></div><nav class="navbar"><a href="../index.html">Home</a> <a href="../index.html#about">About</a> <a href="../index.html#skills">Skills</a> <a href="../index.html#contact">Contact</a> <a href="../blogs.html">Blogs</a> <span class="active-nav"></span> <span class="animate" style="--i:2"></span></nav></header><div class="blog"><div class="content"><h1 style="text-align:left"><b>Creating Randomly Positioned Prank Windows using Tkinter</b></h1><h2>Introduction</h2><h3>Click&nbsp;<a href="https://youtube.com/shorts/QmQzqF5fdgw" target="_blank">here</a> to see the short video of this tutorial. In this blog, Learn <b>how to create prank windows using Tkinter in Python.</b> Discover how to create windows that appear randomly on the screen and surprise or amuse users. This tutorial will guide you through the process of using Tkinter to create the main window and subsequent prank windows. The positions of these windows will be randomized on the screen.</h3><br><h2>Code Explanation</h2><h3 style="text-align:left">Let's examine the code in detail:</h3><br><pre height="70vh"><code id="code-block1" class="language-python">import tkinter as tk
+import random</code></pre><button class="buts btn" id="btn-copy1" style="padding:6px" data-clipboard-target="#code-block1">Copy Code</button><br><br><h3 style="text-align:left">We begin by importing the necessary libraries: tkinter for GUI development and random for generating random coordinates.</h3><pre height="70vh"><code id="code-block2" class="language-python">def open_new_window():
+    new_window = tk.Toplevel(root)
+    new_window.title("New Window")
+    screen_width = new_window.winfo_screenwidth()
+    screen_height = new_window.winfo_screenheight()
+    # Randomize the coordinates within the screen bounds
+    x = random.randint(0, screen_width - 400)
+    y = random.randint(0, screen_height - 300)
+    new_window.geometry(f"400x300+{x}+{y}")  # Set the size and position of the new window
+    label = tk.Label(new_window, text="Prank accomplished!").pack()
+    root.after(100, open_new_window)  # Call the function again</code></pre><button class="buts btn" id="btn-copy2" style="padding:6px" data-clipboard-target="#code-block2">Copy Code</button><br><br><h3 style="text-align:left">The open_new_window() function is responsible for creating the prank windows. Each prank window is a Toplevel window, which is a new window created on top of the main window (root). We set the window's title to "New Window".</h3><br><h3 style="text-align:left">To randomize the window's position, we retrieve the screen width and height using winfo_screenwidth() and winfo_screenheight() methods. Then, we generate random coordinates (x and y) within the screen bounds, ensuring that the window stays within view.</h3><h3 style="text-align:left">Next, we set the size and position of the new window using the geometry() method, specifying the width, height, and the x and y coordinates. A label widget is added to the new window with the text "Prank accomplished!". The label is then packed to fit within the window. To create a continuous loop of prank windows, we use the after() method to call the open_new_window() function every 100 milliseconds.</h3><br><pre height="70vh"><code id="code-block3" class="language-python">root = tk.Tk()
+root.title("Main Window")
+root.overrideredirect(True)  # Hide window decorations
+root.grab_set_global()  # Grab the focus globally
+
+open_new_window()
+root.mainloop()</code></pre><button class="buts btn" id="btn-copy3" style="padding:6px" data-clipboard-target="#code-block3">Copy Code</button><br><br><h3 style="text-align:left">Finally, we create the main window (root), set its title, and hide the window decorations using overrideredirect(True). We also grab the global focus using grab_set_global(). The prank windows will keep appearing randomly on the screen until the main window is closed.</h3><br><h2>Outcome</h2><p>By running this code, you will experience prank windows appearing randomly on your screen. Each window will contain the text "Prank accomplished!".</p><img src="../images/blog2/output.png" width="100%" alt=""><br><br><h2>Full Source code</h2><pre height="70vh"><code id="code-block4" class="language-python">import tkinter as tk
+import random
+
+def open_new_window():
+    new_window = tk.Toplevel(root)
+    new_window.title("New Window")
+    screen_width = new_window.winfo_screenwidth()
+    screen_height = new_window.winfo_screenheight()
+    # Randomize the coordinates within the screen bounds
+    x = random.randint(0, screen_width - 400)
+    y = random.randint(0, screen_height - 300)
+    new_window.geometry(f"400x300+{x}+{y}")  # Set the size and position of the new window
+    label = tk.Label(new_window, text="Prank hogya aapke sath!").pack()
+    root.after(100, open_new_window)  # Call the function again
+
+root = tk.Tk()
+root.title("Main Window")
+root.overrideredirect(True)  # Hide window decorations
+root.grab_set_global()  # Grab the focus globally
+
+open_new_window()
+root.mainloop()
+</code></pre><button class="buts btn" id="btn-copy4" style="padding:6px" data-clipboard-target="#code-block4">Copy Code</button><br><br><h3 style="text-align:left">Here we complete this tutorial.</h3><h3 style="text-align:left">Do remember to access the playlist of project tutorials by clicking&nbsp;<a href="https://www.youtube.com/playlist?list=PLaQTtsrRMSvs8fzIuO334Gk4_lozRxvOr" target="_blank" rel="noopener">here.</a><h3 style="text-align:left"><strong>Thank you for being with me throughout the tutorial. Meet you in the next tutorial.</strong></h3><br></h3></div></div><!-- //////////////footer/////////////// --><footer class="footer"><div class="footer-text"><p>Copyright &copy; 2023 by UpSkillWithMe | All Rights Reserved.</p><span class="animate scroll" style="--i:1"></span></div><div class="footer-iconTop"><a href=""><i class="bx bx-up-arrow-alt"></i></a> <span class="animate scroll" style="--i:3"></span></div></footer><script src="../js/blogpost.js"></script><script src="../js/common.js"></script><style>.blog{min-height:310vh}@media only screen and (max-height:600px){.blog{min-height:437vh}}@media only screen and (max-width:768px){.blog{margin-top:11%}.content{width:80%}}@media only screen and (max-width:375px){.blog{margin-top:22%}}@media only screen and (max-width:280px){.blog{margin-top:34%}}@media only screen and (max-height:800px){.blog{min-height:370vh}}</style></body></html>
