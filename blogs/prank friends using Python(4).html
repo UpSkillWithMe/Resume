@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Python malware or Virus in just 10 lines of code. And you can use this to prank your friends."><meta name="keywords" content="Python, Python malware, Python Virus, Tkinter, Learn Python, Pranks using Python"><title>How to prank your friends using python(3) - UpSkillWithMe - UpSkillWithMe</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/blogpost.css"><link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"><link rel="stylesheet" href="../prism/prism.css"><script src="../prism/prism.js"></script><link rel="icon" type="image/ico" href="../images/logo.png"></head><body><header class="header"><a href="../index.html" class="logo">UpSkillWithMe.<span class="animate" style="--i:1"></span></a><div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span></div><nav class="navbar"><a href="../index.html">Home</a> <a href="../index.html#about">About</a> <a href="../index.html#skills">Skills</a> <a href="../index.html#contact">Contact</a> <a href="../blogs.html">Blogs</a> <span class="active-nav"></span> <span class="animate" style="--i:2"></span></nav></header><div class="blog"><div class="content"><h1 style="text-align:left"><b>How to use Python for pranking your friends</b></h1><h2>Introduction</h2><h3>Click&nbsp;<a href="https://youtube.com/shorts/QmQzqF5fdgw" target="_blank">here</a> to see the short video of this tutorial. In this blog, Learn <b>how to use Python for pranking your friends.</b> We will explore a Python script that utilizes the Tkinter library to create a movable window with the ability to block the Windows key. This project aims to improve user experience by allowing users to reposition the window and prevent accidental activation of the Windows key. We will go through each line of code, explain its purpose, discuss the expected outcome, and conclude with the benefits and potential use cases of this implementation.</h3><br><h2>Code Explanation</h2><h3 style="text-align:left">The first line of code imports the required libraries: tkinter for creating the graphical user interface and keyboard for handling keyboard-related operations.</h3><br><pre height="70vh"><code id="code-block1" class="language-python">import tkinter as tk
+import keyboard</code></pre><button class="buts btn" id="btn-copy1" style="padding:6px" data-clipboard-target="#code-block1">Copy Code</button><br><br><h3 style="text-align:left">The move_window() function is responsible for continuously moving the window to the current mouse coordinates. It retrieves the mouse's x and y coordinates using the winfo_pointerxy() method. The geometry() method is then used to position the window at those coordinates. The function is scheduled to be called again after a short delay using the after() method.</h3><pre height="70vh"><code id="code-block2" class="language-python">def move_window():
+    # Get the current mouse coordinates
+    x, y = root.winfo_pointerxy()
+    # Move the window to the mouse coordinates
+    root.geometry(f"+{x}+{y}")
+    # Schedule the next window movement
+    root.after(1, move_window)  # Adjust the delay as needed</code></pre><button class="buts btn" id="btn-copy2" style="padding:6px" data-clipboard-target="#code-block2">Copy Code</button><br><br><h3 style="text-align:left">The disable_windows_key() function iterates through the key codes from 0 to 149 and blocks each key using the block_key() method from the keyboard library. By doing this, the Windows key is disabled, preventing accidental activation during user interaction with the application.</h3><br><pre height="70vh"><code id="code-block3" class="language-python">def disable_windows_key():
+for i in range(150):
+    keyboard.block_key(i)</code></pre><button class="buts btn" id="btn-copy3" style="padding:6px" data-clipboard-target="#code-block3">Copy Code</button><br><br><h3 style="text-align:left">The code creates a Tkinter window object named root. The window is given a title using the title() method and set to a fixed size using the geometry() method. Additionally, the attributes() method sets the window to be always on top, ensuring its visibility. The grab_set_global() method ensures that the window has global focus, capturing all input events.</h3><br><pre height="70vh"><code id="code-block4" class="language-python"># Create the tkinter window
+root = tk.Tk()
+root.title("Moving Window")
+root.geometry("200x200")
+root.attributes("-topmost", True) #set the window to be always on top
+root.grab_set_global() #grab the focus globally</code></pre><button class="buts btn" id="btn-copy4" style="padding:6px" data-clipboard-target="#code-block4">Copy Code</button><br><br><h1>Outcome</h1><h3>Upon running the script, a Tkinter window will be displayed with a fixed size. The window will automatically move to the current mouse coordinates. Furthermore, the Windows key will be disabled, preventing accidental activation during application usage. If you are able to close this programme without closing the computer, I will give you 1000 bucks.</h3><img src="../images/blog8/Screenshot (397).png" width="100%" alt=""><h1>Full source code</h1><pre height="70vh"><code id="code-block5" class="language-python">import tkinter as tk
+import keyboard
+
+def move_window():
+    # Get the current mouse coordinates
+    x, y = root.winfo_pointerxy()
+    # Move the window to the mouse coordinates
+    root.geometry(f"+{x}+{y}")
+    # Schedule the next window movement
+    root.after(1, move_window)  # Adjust the delay as needed
+
+def disable_windows_key():
+    for i in range(150):
+        keyboard.block_key(i)
+
+# Create the tkinter window
+root = tk.Tk()
+root.title("Moving Window")
+root.geometry("200x200")
+root.attributes("-topmost", True) #set the window to be always on top
+root.grab_set_global() #grab the focus globally
+
+disable_windows_key()
+
+# Start the window movement
+move_window()
+
+# Start the tkinter event loop
+root.mainloop()</code></pre><button class="buts btn" id="btn-copy5" style="padding:6px" data-clipboard-target="#code-block5">Copy Code</button><br><br><h2>Conclusion</h2><p>In this blog post, we looked at a Python script that uses the Tkinter library to build a moveable window that can disable the Windows key. Users can easily relocate the window to their preferred location by using the move_window() function. The disable_windows_key() function also makes sure that the Windows key is inactive, which lessens the possibility of unintentional interruptions.</p><p>This solution provides a better user experience and can be especially helpful in a number of situations, including interactive presentations, full-screen apps, and the creation of unique user interfaces. Developers can make their programmes more logical and user-friendly by allowing users to move the window and removing the Windows key.</p><br><br><h3 style="text-align:left">Here we complete this tutorial.</h3><h3>Do remember to access the playlist of project tutorials by clicking&nbsp;<a href="https://www.youtube.com/playlist?list=PLaQTtsrRMSvs8fzIuO334Gk4_lozRxvOr" target="_blank" rel="noopener">here.</a></h3><h3 style="text-align:left"><strong>Thank you for being with me throughout the tutorial. Meet you in the next tutorial.</strong></h3><br></div></div><!-- //////////////footer/////////////// --><footer class="footer"><div class="footer-text"><p>Copyright &copy; 2023 by UpSkillWithMe | <a style="color:#fff" href="../terms and conditions.html">Terms and Conditions</a> |<a style="color:#fff" href="../privacy policy.html"> Privacy Policy</a></p><span class="animate scroll" style="--i:1"></span></div><div class="footer-iconTop"><a href="prank friends using Python(4).html"><i class="bx bx-up-arrow-alt"></i></a> <span class="animate scroll" style="--i:3"></span></div></footer><script src="../js/blogpost.js"></script><script src="../js/common.js"></script><style>.blog{min-height:356vh}@media only screen and (max-height:800px){.blog{min-height:512vh}}@media only screen and (max-height:600px){.blog{min-height:596vh}}@media only screen and (max-width:912px){.blog{min-height:260vh}}@media only screen and (max-width:820px){.blog{min-height:316vh}}@media only screen and (max-width:768px){.blog{margin-top:18%}.content{width:80%}}@media only screen and (max-width:414px){.blog{min-height:399vh}}@media only screen and (max-width:280px){.blog{margin-top:34%}}</style></body></html>
