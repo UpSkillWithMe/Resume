@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5787126823461425"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="99% of JavaScript Developers Don't know this">
+    <meta name="keywords" content="JavaScript, Learn JavaScript, Js">
+    <title>99% of JavaScript Developers do these mistakes - UpSkillWithMe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blogpost.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../prism/prism.css">
+    <script src="../prism/prism.js"></script>
+    <link rel="icon" type="image/ico" href="../images/logo.png">
+</head>
+
+<body>
+    <header class="header"><a href="../index.html" class="logo">UpSkillWithMe.<span class="animate"
+                style="--i:1"></span></a>
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span></div>
+        <nav class="navbar"><a href="../index.html">Home</a> <a href="../index.html#about">About</a> <a
+                href="../index.html#skills">Skills</a> <a href="../index.html#contact">Contact</a> <a
+                href="../blogs.html">Blogs</a> <span class="active-nav"></span> <span class="animate"
+                style="--i:2"></span></nav>
+    </header>
+    <div class="blog">
+        <div class="content">
+            <h1 style="text-align:left"><b>99% of JavaScript Developers do these mistakes.</b></h1>
+            <h2>Introduction</h2>
+            <h3>Click&nbsp;<a href="https://youtube.com/shorts/QmQzqF5fdgw" target="_blank">here</a> to see the short
+                video of this tutorial. Although JavaScript is a flexible programming language that is frequently used for web development, if you are unfamiliar with its subtleties, it is simple to make mistakes. In this blog post, we'll look at some mistakes that JavaScript developers frequently make and talk about how to avoid them. You may create more stable and dependable JavaScript code by being aware of these risks and adhering to best practises.</h3><br>
+            <h2>Not Understanding the Difference between == and ===:</h2>
+            <h3 style="text-align:left">The == and === equality comparison operators are available in JavaScript. The === operator compares values without type coercion, whereas the === operator conducts type coercion before doing so. If you're unaware of the distinction, it could have unanticipated effects. As an illustration, the value 1 == '1' evaluates to true because the values are forced, but the value 1 === '1' evaluates to false because the types are different. It's important to use the right operator for your intended comparison.</h3><br>
+            <pre height="70vh"><code id="code-block1" class="language-javascript">console.log(1 == '1'); // true
+console.log(1 === '1'); // false</code></pre><button class="buts btn" id="btn-copy1" style="padding:6px"
+                data-clipboard-target="#code-block1">Copy Code</button><br><br>
+            <h2 style="text-align:left">Not Handling Null and Undefined Properly:</h2>
+            <h3 style="text-align:left">Null and undefined are two unique values in JavaScript that signify the lack of a value. Incorrect handling of these values may result in undesirable behaviour. For instance, errors may occur if a variable or property is accessed that is not defined. Make appropriate use of the equality operators to check for null or undefined. In contrast to x === null, which just checks for null, x === null evaluates to true if x is null or undefined.</h3>
+            <pre height="70vh"><code id="code-block2" class="language-javascript">let x;
+console.log(x); // undefined
+console.log(typeof x); // undefined
+console.log(x == null); // true
+console.log(x === null); // false</code></pre><button class="buts btn" id="btn-copy2" style="padding:6px"
+                data-clipboard-target="#code-block2">Copy Code</button><br><br>
+            <h2 style="text-align:left">Not Using Strict Mode:</h2>
+            <h3 style="text-align:left">JavaScript's strict mode can assist in detecting potential problems and enforcing better coding standards. You can activate strict mode by adding the directive "use strict"; at the start of a script or function. In this mode, undeclared variables are forbidden, problematic language features are avoided, and safer coding techniques are encouraged. To improve the quality and maintainability of your JavaScript code, it is advised that you routinely utilise strict mode.</h3><br>
+            <pre height="70vh"><code id="code-block3" class="language-javascript">// Without strict mode
+function doSomething() {
+    x = 5; // This creates a global variable without warning
+}
+// With strict mode
+function doSomething() {
+    "use strict";
+    x = 5; // This throws a ReferenceError
+}</code></pre><button class="buts btn" id="btn-copy3" style="padding:6px"
+                data-clipboard-target="#code-block3">Copy Code</button><br><br>
+            <h2 style="text-align:left">Not Using let or const:</h2>
+            <h3 style="text-align:left">Using the var keyword for variable declaration can lead to unexpected behavior due to its function-level scoping. Instead, it's preferable to use let or const for better control over variable scope. let allows block-level scoping, preventing issues like variable hoisting and unintended reassignment. const is used for variables that should not be reassigned. By utilizing let and const appropriately, you can avoid scope-related bugs and improve code clarity.</h3><br>
+            <pre height="70vh"><code id="code-block4" class="language-javascript">// Using var
+for (var i = 0; i < 5; i++) {
+    setTimeout(() => console.log(i), 1000);
+}
+// Outputs 5, 5, 5, 5, 5
+// Using let
+for (let i = 0; i < 5; i++) {
+    setTimeout(() => console.log(i), 1000);
+}
+// Outputs 0, 1, 2, 3, 4</code></pre><button class="buts btn" id="btn-copy4" style="padding:6px" data-clipboard-target="#code-block4">Copy
+                Code</button><br><br>
+            <h2 style="text-align:left">Not Using a JavaScript Linter:</h2>
+            <h3 style="text-align:left">An instrument called a JavaScript linter examines your code to look for potential mistakes, style infractions, and other problems. Lack of a linter can result in uneven code style, syntax mistakes, and difficult-to-find defects. A JavaScript linter can help you maintain code consistency, find and fix issues early in the development process, and produce higher-quality code.</h3><br>
+            <h3 style="text-align:left">A new Block instance is created with the provided data and the hash of the previous block.</h3><br>
+            <img src="../images/blog12/ch41o89rwv12ns2mbxqz.png" alt="JavaScript Linter, JavaScript linter" width="100%" alt=""><br><br>
+ 
+            <h2>Conclusion</h2>
+            <h3>Writing clear, maintainable, and bug-free JavaScript requires avoiding common pitfalls. You may improve the dependability and readability of your JavaScript code by knowing the difference between == and ===, handling null and undefined correctly, utilising strict mode, using let or const for variable declaration, and utilising a JavaScript linter. You may improve your skills as a JavaScript developer by consistently learning and using good coding practises.</h3><br>
+            <h3 style="text-align:left">Here we complete this tutorial. Remember, the key to writing high-quality JavaScript code lies in being aware of these common mistakes and making a conscious effort to avoid them. Happy coding!</h3>
+            <h3>Do remember to access the playlist of project tutorials by clicking&nbsp;<a
+                    href="https://www.youtube.com/playlist?list=PLaQTtsrRMSvs8fzIuO334Gk4_lozRxvOr" target="_blank"
+                    rel="noopener">here.</a></h3>
+            <h3 style="text-align:left"><strong>Thank you for being with me throughout the tutorial. Meet you in the next tutorial.</strong></h3><br>
+        </div>
+    </div><!-- //////////////footer/////////////// -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by UpSkillWithMe | <a style="color:#fff" href="../terms and conditions.html">Terms
+                    and Conditions</a> |<a style="color:#fff" href="../privacy policy.html"> Privacy Policy</a></p><span
+                class="animate scroll" style="--i:1"></span>
+        </div>
+        <div class="footer-iconTop"><a href="Most Of JavaScript Developers Don't Know This.html"><i class="bx bx-up-arrow-alt"></i></a> <span
+                class="animate scroll" style="--i:3"></span></div>
+    </footer>
+    <script>Prism.highlightAll();</script>
+    <script src="../js/blogpost.js"></script>
+    <script src="../js/common.js"></script>
+    <style>
+        .blog {
+            min-height: 319vh
+        }
+
+        @media only screen and (max-height:800px) {
+            .blog {
+                min-height: 360vh;
+                margin-top: 8%
+            }
+        }
+
+        @media only screen and (max-height:600px) {
+            .blog {
+                margin-top: 9%;
+                min-height: 442vh
+            }
+        }
+
+        @media only screen and (max-width:912px) {
+            .blog {
+                min-height: 207vh;
+                margin-top: 8%;
+            }
+        }
+
+        @media only screen and (max-width:820px) {
+            .blog {
+                min-height: 252vh;
+                margin-top: 11%;
+            }
+        }
+
+        @media only screen and (max-width:768px) {
+            .blog {
+                margin-top: 18%
+            }
+
+            .content {
+                width: 80%
+            }
+        }
+
+        @media only screen and (max-width:414px) {
+            .blog {
+                min-height: 339vh
+            }
+        }
+
+        @media only screen and (max-width:280px) {
+            .blog {
+                margin-top: 34%
+            }
+        }
+    </style>
+</body>
+
+</html>

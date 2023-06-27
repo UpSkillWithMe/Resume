@@ -1,4 +1,3 @@
-
 // script js code
 // toggle icon navbar
 let menuIcon = document.querySelector('#menu-icon')

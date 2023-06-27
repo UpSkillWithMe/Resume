@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5787126823461425"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="How to make a Simple Blockchain Programme using Python, C & JavaScript">
+    <meta name="keywords" content="Simple Blockchain Programme, Simple Blockchain using Python, Simple Blockchain using JavaScript, Simple Blockchain Using C Language">
+    <title>Simple Blockchain Program In Different Programming Languages  - UpSkillWithMe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blogpost.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../prism/prism.css">
+    <script src="../prism/prism.js"></script>
+    <link rel="icon" type="image/ico" href="../images/logo.png">
+</head>
+
+<body>
+    <header class="header"><a href="../index.html" class="logo">UpSkillWithMe.<span class="animate"
+                style="--i:1"></span></a>
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span></div>
+        <nav class="navbar"><a href="../index.html">Home</a> <a href="../index.html#about">About</a> <a
+                href="../index.html#skills">Skills</a> <a href="../index.html#contact">Contact</a> <a
+                href="../blogs.html">Blogs</a> <span class="active-nav"></span> <span class="animate"
+                style="--i:2"></span></nav>
+    </header>
+    <div class="blog">
+        <div class="content">
+            <h1 style="text-align:left"><b>Simple Blockchain Program In Different Programming Languages</b></h1>
+            <h2>Introduction</h2>
+            <h3>Click&nbsp;<a href="https://youtube.com/shorts/QmQzqF5fdgw" target="_blank">here</a> to see the short
+                video of this tutorial. In this blog, Learn <b>how to make a Simple Blockchain Program In Different Programming Languages.</b> Due to its applications across many industries, particularly in the area of cryptocurrency, blockchain technology has grown significantly in popularity. By creating a straightforward blockchain using JavaScript, C, and Python, we will examine the principles of blockchain technology. The implementation of the code will be covered, and each step will be explained.</h3><br>
+            <h2>Code Explanation</h2>
+            <h1 style="text-align: center; font-size: 4rem;">JavaScript</h1>
+            <h3 style="text-align:left">This code defines a Block class that represents a block in the blockchain. It has a constructor function that takes data and previousHash as parameters.</h3><br>
+            <h3 style="text-align:left">Inside the constructor, this.timestamp is set to the current date and time using new Date().</h3><br>
+            <h3 style="text-align:left">this.data is set to the provided data parameter, representing the block's data.</h3><br>
+            <h3 style="text-align:left">this.previousHash is set to the provided previousHash parameter, representing the hash of the previous block in the chain.</h3><br>
+            <h3 style="text-align:left">this.hash is set to the result of calling the calculateHash() method, which computes the hash value of the block based on its data and previous hash.</h3><br>
+            <pre height="70vh"><code id="code-block1" class="language-javascript">class Block {
+    constructor(data, previousHash) {
+        this.timestamp = new Date();
+        this.data = data;
+        this.previousHash = previousHash;
+        this.hash = this.calculateHash();
+    }</code></pre><button class="buts btn" id="btn-copy1" style="padding:6px"
+                data-clipboard-target="#code-block1">Copy Code</button><br><br>
+            <h3 style="text-align:left">The calculateHash() method calculates the hash value of the block.</h3>
+            <h3 style="text-align:left">It starts by concatenating the block's data, previousHash, and timestamp into a single string called data.</h3>
+            <h3 style="text-align:left">It then creates a new Uint8Array of length 32 to hold the hash value.</h3>
+            <h3 style="text-align:left">The data string is encoded into bytes using TextEncoder().encode(data).</h3>
+            <h3 style="text-align:left">A loop iterates from 0 to 31 (32 iterations) and assigns each byte from dataAsBytes to the corresponding index in the hash array using the modulo operator to wrap around the bytes if necessary.</h3>
+            <h3 style="text-align:left">Finally, the calculated hash is returned as a string.</h3>
+            <pre height="70vh"><code id="code-block2" class="language-javascript">    calculateHash() {
+    const data = this.data + this.previousHash + this.timestamp;
+    let hash = new Uint8Array(32);
+    const dataAsBytes = new TextEncoder().encode(data);
+    for (let i = 0; i < 32; i++) {
+        hash[i] = dataAsBytes[i % dataAsBytes.length];
+    }
+    return hash.toString();
+}</code></pre><button class="buts btn" id="btn-copy2" style="padding:6px"
+                data-clipboard-target="#code-block2">Copy Code</button><br><br>
+            <h3 style="text-align:left">The code defines a Blockchain class that represents the entire blockchain.</h3><br>
+            <h3 style="text-align:left">The constructor function initializes the chain property as an array and sets its first element as the genesis block by calling the createGenesisBlock() method.</h3><br>
+            <pre height="70vh"><code id="code-block3" class="language-javascript">class Blockchain {
+constructor() {
+    this.chain = [this.createGenesisBlock()];
+}</code></pre><button class="buts btn" id="btn-copy3" style="padding:6px"
+                data-clipboard-target="#code-block3">Copy Code</button><br><br>
+            <h3 style="text-align:left">The createGenesisBlock() method creates the first block in the chain, known as the genesis block.</h3><br>
+            <h3 style="text-align:left">It returns a new Block instance with predefined data "Genesis Block" and a previous hash of "0".</h3><br>
+            <pre height="70vh"><code id="code-block4" class="language-javascript">    createGenesisBlock() {
+    return new Block("Genesis Block", "0");
+}</code></pre><button class="buts btn" id="btn-copy4" style="padding:6px" data-clipboard-target="#code-block4">Copy
+                Code</button><br><br>
+            <h3 style="text-align:left">The addBlock() method adds a new block to the blockchain.</h3><br>
+            <h3 style="text-align:left">It retrieves the previous block from the chain array by accessing this.chain[this.chain.length - 1].</h3><br>
+            <h3 style="text-align:left">A new Block instance is created with the provided data and the hash of the previous block.</h3><br>
+            <h3 style="text-align:left">The new block is then appended to the chain array using this.chain.push(newBlock).</h3><br>
+            <pre height="70vh"><code id="code-block5" class="language-javascript">    addBlock(data) {
+    let previousBlock = this.chain[this.chain.length - 1];
+    let newBlock = new Block(data, previousBlock.hash);
+    this.chain.push(newBlock);
+}</code></pre><button
+                class="buts btn" id="btn-copy5" style="padding:6px" data-clipboard-target="#code-block5">Copy
+                Code</button><br><br>
+            <h3 style="text-align:left">The isValid() method checks the validity of the blockchain by verifying each block's hash and the chain's continuity.</h3><br>
+            <h3 style="text-align:left">It starts iterating over the chain array from the second block (index 1).</h3><br>
+            <h3 style="text-align:left">For each block, it compares the stored hash value with the result of calling calculateHash() on that block. If they don't match, it returns false.</h3><br>
+            <h3 style="text-align:left">It also checks if the previous block's hash (previousHash) matches the current block's hash. If not, it returns false.</h3><br>
+            <h3 style="text-align:left">If all blocks pass the validity checks, it returns true.</h3><br>
+            <pre height="70vh"><code id="code-block6" class="language-javascript">    isValid() {
+                for (let i = 1; i < this.chain.length; i++) {
+                    if (this.chain[i].hash !== this.chain[i].calculateHash()) {
+                        return false;
+                    }
+                    if (this.chain[i - 1].hash !== this.chain[i].previousHash) {
+                        return false;
+                    }
+                }
+                return true;
+            }</code></pre><button class="buts btn"
+                id="btn-copy6" style="padding:6px" data-clipboard-target="#code-block6">Copy Code</button><br>
+            <h3 style="text-align:left">These lines create a new instance of the Blockchain class called blockchain.</h3><br>
+            <h3 style="text-align:left">Two blocks are added to the blockchain using the addBlock() method with transaction data "Transaction 1" and "Transaction 2".</h3><br>
+            <h3 style="text-align:left">The validity of the blockchain is checked using the isValid() method, and the result is logged to the console.</h3><br>
+            <pre height="70vh"><code id="code-block7" class="language-javascript">let blockchain = new Blockchain();
+blockchain.addBlock("Transaction 1");
+blockchain.addBlock("Transaction 2");
+console.log(blockchain.isValid());</code></pre><button class="buts btn" id="btn-copy7" style="padding:6px"
+            data-clipboard-target="#code-block7">Copy Code</button><br><br>
+        <h3 style="text-align:left">Similar to single_line_comments, this list defines tuples for matching and removing multiline comments using regular expressions.</h3><br>
+        <h1>Full source code</h1>
+        <pre height="70vh"><code id="code-block8" class="language-python">class Block {
+    constructor(data, previousHash) {
+        this.timestamp = new Date();
+        this.data = data;
+        this.previousHash = previousHash;
+        this.hash = this.calculateHash();
+    }
+
+    calculateHash() {
+        const data = this.data + this.previousHash + this.timestamp;
+        let hash = new Uint8Array(32);
+        const dataAsBytes = new TextEncoder().encode(data);
+        for (let i = 0; i < 32; i++) {
+            hash[i] = dataAsBytes[i % dataAsBytes.length];
+        }
+        return hash.toString();
+    }
+}
+
+class Blockchain {
+    constructor() {
+        this.chain = [this.createGenesisBlock()];
+    }
+
+    createGenesisBlock() {
+        return new Block("Genesis Block", "0");
+    }
+
+    addBlock(data) {
+        let previousBlock = this.chain[this.chain.length - 1];
+        let newBlock = new Block(data, previousBlock.hash);
+        this.chain.push(newBlock);
+    }
+
+    isValid() {
+        for (let i = 1; i < this.chain.length; i++) {
+            if (this.chain[i].hash !== this.chain[i].calculateHash()) {
+                return false;
+            }
+            if (this.chain[i - 1].hash !== this.chain[i].previousHash) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+let blockchain = new Blockchain();
+blockchain.addBlock("Transaction 1");
+blockchain.addBlock("Transaction 2");
+console.log(blockchain.isValid());</code></pre><button class="buts btn" id="btn-copy8" style="padding:6px"
+                data-clipboard-target="#code-block8">Copy Code</button><br>
+                <h1 style="text-align: center; font-size: 4rem;">Python</h1>
+            <h3 style="text-align:left">The hashlib module provides various hashing algorithms, such as SHA-256, which we'll use to calculate hash values.</h3><br>
+            <h3 style="text-align:left">The datetime module is used to work with dates and times.</h3><br>
+            <pre height="70vh"><code id="code-block9" class="language-python">import hashlib
+import datetime</code></pre><button class="buts btn" id="btn-copy9" style="padding:6px"
+                data-clipboard-target="#code-block9">Copy Code</button><br>
+            <h3 style="text-align:left">This defines the Block class, which represents a single block in the blockchain.</h3>
+            <h3 style="text-align:left">The __init__ method is the constructor that initializes the block's properties: timestamp, data, previousHash, and hash.</h3>
+            <h3 style="text-align:left">self.timestamp stores the current timestamp using datetime.datetime.now().</h3>
+            <h3 style="text-align:left">self.data stores the data associated with the block.</h3>
+            <h3 style="text-align:left">self.previousHash stores the hash value of the previous block.</h3>
+            <h3 style="text-align:left">self.hash is initialized by calling the calculateHash() method, which generates the hash value for the current block based on its properties.</h3>
+            <h3 style="text-align:left">The calculateHash() method concatenates the block's data, previous hash, and timestamp into a single string. It then encodes the string, calculates the SHA-256 hash using hashlib.sha256(), and returns the hexadecimal representation of the hash using hexdigest().</h3>
+            <br>
+            <pre height="70vh"><code id="code-block10" class="language-python">class Block:
+    def __init__(self, data, previousHash):
+        self.timestamp = datetime.datetime.now()
+        self.data = data
+        self.previousHash = previousHash
+        self.hash = self.calculateHash()
+
+    def calculateHash(self):
+        data = str(self.data) + str(self.previousHash) + str(self.timestamp)
+        return hashlib.sha256(data.encode()).hexdigest()</code></pre><button class="buts btn" id="btn-copy10" style="padding:6px"
+                data-clipboard-target="#code-block10">Copy Code</button><br>
+            <h3 style="text-align:left">This defines the Blockchain class, which manages the chain of blocks.</h3>
+            <h3 style="text-align:left">The __init__ method initializes the chain with a single block, the genesis block, created by calling the createGenesisBlock() method.</h3>
+            <h3 style="text-align:left">The createGenesisBlock() method creates and returns the genesis block by passing "Genesis Block" as the data and "0" as the previous hash to the Block constructor.</h3>
+            <h3 style="text-align:left">The addBlock() method adds a new block to the chain. It retrieves the previous block from the chain, creates a new block by passing the data and previous hash to the Block constructor, and appends it to the chain.</h3>
+            <h3 style="text-align:left">The isValid() method checks the validity of the blockchain. It iterates through the chain starting from the second block and verifies that the hash of each block matches the calculated hash and that the previous hash of each block matches the hash of the previous block. If any inconsistency is found, it returns False. If the loop completes without any issues, it returns True.</h3>
+            <br>
+            <h1>Full source code</h1>
+            <pre height="70vh"><code id="code-block11" class="language-python">class Blockchain:
+    def __init__(self):
+        self.chain = [self.createGenesisBlock()]
+
+    def createGenesisBlock(self):
+        return Block("Genesis Block", "0")
+
+    def addBlock(self, data):
+        previousBlock = self.chain[-1]
+        newBlock = Block(data, previousBlock.hash)
+        self.chain.append(newBlock)
+
+    def isValid(self):
+        for i in range(1, len(self.chain)):
+            if self.chain[i].hash != self.chain[i].calculateHash():
+                return False
+            if self.chain[i - 1].hash != self.chain[i].previousHash:
+                return False
+        return True</code></pre><button class="buts btn" id="btn-copy11" style="padding:6px"
+                data-clipboard-target="#code-block11">Copy Code</button><br>
+            <h3 style="text-align:left">These lines create an instance of the Blockchain class, blockchain.</h3>
+            <h3 style="text-align:left">Two new blocks are added to the blockchain using the addBlock() method with the respective transaction data.</h3>
+            <h3 style="text-align:left">Finally, the isValid() method is called to check the validity of the blockchain, and the result is printed to the console.</h3>
+            <br>
+            <pre height="70vh"><code id="code-block12" class="language-python">blockchain = Blockchain()
+blockchain.addBlock("Transaction 1")
+blockchain.addBlock("Transaction 2")
+print(blockchain.isValid())</code></pre><button class="buts btn" id="btn-copy12" style="padding:6px"
+                data-clipboard-target="#code-block12">Copy Code</button><br>
+
+                <h1 style="text-align: center; font-size: 4rem;">C language</h1>
+            <h3 style="text-align:left">These are the header files included for standard input/output operations (stdio.h), time-related functions (time.h), string manipulation functions (string.h), and dynamic memory allocation functions (stdlib.h).</h3><br>
+            <pre height="70vh"><code id="code-block13" class="language-C">#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;</code></pre><button class="buts btn" id="btn-copy13" style="padding:6px"
+                data-clipboard-target="#code-block13">Copy Code</button><br>
+            <h3 style="text-align:left">This defines a structure called Block to represent a single block in the blockchain.</h3>
+            <h3 style="text-align:left">It contains members such as timestamp (of type time_t to store the timestamp), data (a pointer to store the block's data), previousHash (a pointer to store the hash of the previous block), and hash (a pointer to store the hash of the current block).</h3><br>
+            <pre height="70vh"><code id="code-block14" class="language-python">typedef struct Block {
+    time_t timestamp;
+    char *data;
+    char *previousHash;
+    char *hash;
+} Block;</code></pre><button class="buts btn" id="btn-copy14" style="padding:6px"
+                data-clipboard-target="#code-block14">Copy Code</button><br>
+            <h3 style="text-align:left">This function calculates the hash value for a given block.</h3>
+            <h3 style="text-align:left">It concatenates the block's data, previous hash, and timestamp into a single string using sprintf.</h3>
+            <h3 style="text-align:left">Then, it dynamically allocates memory for the hash using malloc to store the hash value.</h3>
+            <h3 style="text-align:left">The hash value is calculated by copying characters from the concatenated string in a cyclic manner.</h3>
+            <h3 style="text-align:left">Finally, the calculated hash is returned.</h3>
+            <br>
+            <pre height="70vh"><code id="code-block15" class="language-python">char *calculateHash(Block *block) {
+    char data[256];
+    sprintf(data, "%s%s%ld", block->data, block->previousHash, (long)block->timestamp);
+    char *hash = (char*)malloc(sizeof(char) * 32);
+    for (int i = 0; i < 32; i++) {
+        hash[i] = data[i % strlen(data)];
+    }
+    return hash;
+}</code></pre><button class="buts btn" id="btn-copy15" style="padding:6px"
+                data-clipboard-target="#code-block15">Copy Code</button><br><br>
+                <h3 style="text-align:left">This function creates the genesis block, which is the first block in the blockchain.</h3>
+                <h3 style="text-align:left">It allocates memory for a new Block structure, assigns the current timestamp using time(NULL), sets the data as "Genesis Block", assigns "0" as the previous hash, and calculates the hash value using the calculateHash function.</h3>
+                <h3 style="text-align:left">Finally, it returns the genesis block.</h3><br>
+                <pre height="70vh"><code id="code-block16" class="language-python">Block *createGenesisBlock() {
+    Block *genesisBlock = (Block *)malloc(sizeof(Block));
+    genesisBlock->timestamp = time(NULL);
+    genesisBlock->data = "Genesis Block";
+    genesisBlock->previousHash = "0";
+    genesisBlock->hash = calculateHash(genesisBlock);
+    return genesisBlock;
+}</code></pre><button class="buts btn" id="btn-copy16" style="padding:6px"
+                    data-clipboard-target="#code-block16">Copy Code</button><br><br>
+                <h3 style="text-align:left">This defines a structure called Blockchain to represent the entire blockchain.</h3>
+                <h3 style="text-align:left">It contains members such as chain (a pointer to an array of Block pointers) and size (to store the size of the blockchain).</h3><br>
+                <pre height="70vh"><code id="code-block17" class="language-python">typedef struct Blockchain {
+    Block **chain;
+    int size;
+} Blockchain;</code></pre><button class="buts btn" id="btn-copy17" style="padding:6px"
+                    data-clipboard-target="#code-block17">Copy Code</button><br><br>
+                <h3 style="text-align:left">This function creates a new blockchain.</h3>
+                <h3 style="text-align:left">It allocates memory for a new Blockchain structure, assigns memory for the chain array with a size of one Block pointer, sets the first element of chain to the genesis block created by calling createGenesisBlock, and initializes the size of the blockchain to 1.</h3>
+                <h3 style="text-align:left">Finally, it returns the newly created blockchain.</h3>
+                <br>
+                <pre height="70vh"><code id="code-block18" class="language-python">Blockchain *createBlockchain() {
+    Blockchain *blockchain = (Blockchain *)malloc(sizeof(Blockchain));
+    blockchain->chain = (Block **)malloc(sizeof(Block *));
+    blockchain->chain[0] = createGenesisBlock();
+    blockchain->size = 1;
+    return blockchain;
+}</code></pre><button class="buts btn" id="btn-copy18" style="padding:6px"
+                    data-clipboard-target="#code-block18">Copy Code</button><br><br>
+                <h3 style="text-align:left">This function adds a new block to the blockchain.</h3>
+                <h3 style="text-align:left">It takes the blockchain as input, along with the data for the new block.</h3>
+                <h3 style="text-align:left">It retrieves the previous block from the chain using the size information, allocates memory for a new Block structure, sets the timestamp to the current time, assigns the data, sets the previous hash as the hash of the previous block, calculates the hash for the new block using the calculateHash function, increments the size of the blockchain, reallocates memory for the chain array to accommodate the new block, and finally, adds the new block to the chain.</h3>
+                <br>
+            <pre height="70vh"><code id="code-block19" class="language-python">void addBlock(Blockchain *blockchain, char *data) {
+    Block *previousBlock = blockchain->chain[blockchain->size - 1];
+    Block *newBlock = (Block *)malloc(sizeof(Block));
+    newBlock->timestamp = time(NULL);
+    newBlock->data = data;
+    newBlock->previousHash = previousBlock->hash;
+    newBlock->hash = calculateHash(newBlock);
+    blockchain->size++;
+    blockchain->chain = (Block **)realloc(blockchain->chain, sizeof(Block *) * blockchain->size);
+    blockchain->chain[blockchain->size - 1] = newBlock;
+}</code></pre><button class="buts btn" id="btn-copy19" style="padding:6px"
+                    data-clipboard-target="#code-block19">Copy Code</button><br><br>
+                <h3 style="text-align:left">This function checks the validity of the blockchain.</h3>
+                <h3 style="text-align:left">It iterates through the chain, starting from the second block.</h3>
+                <h3 style="text-align:left">For each block, it compares the stored hash with the calculated hash using strcmp to check if they match. If not, it returns 0 to indicate the blockchain is invalid.</h3>
+                <h3 style="text-align:left">It also compares the previous hash of the current block with the hash of the previous block to ensure the chain is intact. If they don't match, it returns 0.</h3>
+                <h3 style="text-align:left">If the loop completes without any issues, it returns 1, indicating that the blockchain is valid.</h3>
+                <br>
+            <pre height="70vh"><code id="code-block20" class="language-python">int isValid(Blockchain *blockchain) {
+    for (int i = 1; i < blockchain->size; i++) {
+        if (strcmp(blockchain->chain[i]->hash, calculateHash(blockchain->chain[i])) != 0) {
+            return 0;
+        }
+        if (strcmp(blockchain->chain[i - 1]->hash, blockchain->chain[i]->previousHash) != 0) {
+            return 0;
+        }
+    }
+    return 1;
+}</code></pre><button class="buts btn" id="btn-copy20" style="padding:6px"
+                    data-clipboard-target="#code-block20">Copy Code</button><br><br>
+                <h3 style="text-align:left">The main function is the entry point of the program.</h3>
+                <h3 style="text-align:left">It creates a new blockchain by calling createBlockchain, adds two blocks to the blockchain using addBlock with different transaction data, checks the validity of the blockchain using isValid, and prints the result to the console using printf.</h3>
+                <br>
+            <pre height="70vh"><code id="code-block21" class="language-python">int main() {
+    Blockchain *blockchain = createBlockchain();
+    addBlock(blockchain, "Transaction 1");
+    addBlock(blockchain, "Transaction 2");
+    printf("Blockchain is valid: %d\n", isValid(blockchain));
+    return 0;
+}</code></pre><button class="buts btn" id="btn-copy21" style="padding:6px"
+                    data-clipboard-target="#code-block21">Copy Code</button><br><br>
+            <h1>Full source code</h1>
+            <pre height="70vh"><code id="code-block22" class="language-c">#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct Block {
+    time_t timestamp;
+    char *data;
+    char *previousHash;
+    char *hash;
+} Block;
+
+char *calculateHash(Block *block) {
+    char data[256];
+    sprintf(data, "%s%s%ld", block->data, block->previousHash, (long)block->timestamp);
+    char *hash = (char*)malloc(sizeof(char) * 32);
+    for (int i = 0; i < 32; i++) {
+        hash[i] = data[i % strlen(data)];
+    }
+    return hash;
+}
+
+Block *createGenesisBlock() {
+    Block *genesisBlock = (Block *)malloc(sizeof(Block));
+    genesisBlock->timestamp = time(NULL);
+    genesisBlock->data = "Genesis Block";
+    genesisBlock->previousHash = "0";
+    genesisBlock->hash = calculateHash(genesisBlock);
+    return genesisBlock;
+}
+
+typedef struct Blockchain {
+    Block **chain;
+    int size;
+} Blockchain;
+
+Blockchain *createBlockchain() {
+    Blockchain *blockchain = (Blockchain *)malloc(sizeof(Blockchain));
+    blockchain->chain = (Block **)malloc(sizeof(Block *));
+    blockchain->chain[0] = createGenesisBlock();
+    blockchain->size = 1;
+    return blockchain;
+}
+
+void addBlock(Blockchain *blockchain, char *data) {
+    Block *previousBlock = blockchain->chain[blockchain->size - 1];
+    Block *newBlock = (Block *)malloc(sizeof(Block));
+    newBlock->timestamp = time(NULL);
+    newBlock->data = data;
+    newBlock->previousHash = previousBlock->hash;
+    newBlock->hash = calculateHash(newBlock);
+    blockchain->size++;
+    blockchain->chain = (Block **)realloc(blockchain->chain, sizeof(Block *) * blockchain->size);
+    blockchain->chain[blockchain->size - 1] = newBlock;
+}
+
+int isValid(Blockchain *blockchain) {
+    for (int i = 1; i < blockchain->size; i++) {
+        if (strcmp(blockchain->chain[i]->hash, calculateHash(blockchain->chain[i])) != 0) {
+            return 0;
+        }
+        if (strcmp(blockchain->chain[i - 1]->hash, blockchain->chain[i]->previousHash) != 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int main() {
+    Blockchain *blockchain = createBlockchain();
+    addBlock(blockchain, "Transaction 1");
+    addBlock(blockchain, "Transaction 2");
+    printf("Blockchain is valid: %d\n", isValid(blockchain));
+    return 0;
+}</code></pre><button class="buts btn" id="btn-copy22" style="padding:6px"
+                data-clipboard-target="#code-block22">Copy Code</button><br><br>
+            <h1>Outcome</h1><br>
+            <h3>In the provided code, a Blockchain instance is created, and two blocks are added to it using the addBlock method with transaction data. Finally, the isValid method is called to check the validity of the blockchain. The result is logged to the console.</h3><br>
+            <h2>Conclusion</h2>
+            <h3>Building a straightforward blockchain with JavaScript, C, and Python offers insights on the core ideas of blockchain technology. The code illustrates the creation, connection, and validation of blocks inside the blockchain. Exploring more complicated blockchain applications begins with a thorough understanding of the fundamentals of blockchain technology. You can investigate aspects like proof-of-work, consensus techniques, and decentralised networks by expanding on this code.</h3><br>
+            <h3 style="text-align:left">Here we complete this tutorial.</h3>
+            <h3>Do remember to access the playlist of project tutorials by clicking&nbsp;<a
+                    href="https://www.youtube.com/playlist?list=PLaQTtsrRMSvs8fzIuO334Gk4_lozRxvOr" target="_blank"
+                    rel="noopener">here.</a></h3>
+            <h3 style="text-align:left"><strong>Thank you for being with me throughout the tutorial. Meet you in the
+                    next tutorial.</strong></h3><br>
+        </div>
+    </div><!-- //////////////footer/////////////// -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by UpSkillWithMe | <a style="color:#fff" href="../terms and conditions.html">Terms
+                    and Conditions</a> |<a style="color:#fff" href="../privacy policy.html"> Privacy Policy</a></p><span
+                class="animate scroll" style="--i:1"></span>
+        </div>
+        <div class="footer-iconTop"><a href="Simple Blockchain Program In Different Programming Languages.html"><i class="bx bx-up-arrow-alt"></i></a> <span
+                class="animate scroll" style="--i:3"></span></div>
+    </footer>
+    <script>Prism.highlightAll();</script>
+    <script src="../js/blogpost.js"></script>
+    <script src="../js/common.js"></script>
+    <style>
+        .blog {
+            min-height: 1278vh
+        }
+
+        @media only screen and (max-height:800px) {
+            .blog {
+                min-height: 512vh;
+                margin-top: 8%
+            }
+        }
+
+        @media only screen and (max-height:600px) {
+            .blog {
+                margin-top: 9%;
+                min-height: 596vh
+            }
+        }
+
+        @media only screen and (max-width:912px) {
+            .blog {
+                min-height: 403vh;
+                margin-top: 8%;
+            }
+        }
+
+        @media only screen and (max-width:820px) {
+            .blog {
+                min-height: 476vh;
+                margin-top: 11%;
+            }
+        }
+
+        @media only screen and (max-width:768px) {
+            .blog {
+                margin-top: 18%
+            }
+
+            .content {
+                width: 80%
+            }
+        }
+
+        @media only screen and (max-width:414px) {
+            .blog {
+                min-height: 399vh
+            }
+        }
+
+        @media only screen and (max-width:280px) {
+            .blog {
+                margin-top: 34%
+            }
+        }
+    </style>
+</body>
+
+</html>
