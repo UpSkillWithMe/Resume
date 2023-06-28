@@ -70,35 +70,35 @@ int main(void) {
 Code</button><br><br>
 <h2 style="text-align:left">Modulus operator behavior:</h2><br>
 <h3>The behavior of the modulus operator % with negative numbers may differ from expectations.</h3>
-<pre height="70vh"><code id="code-block6" class="language-C"></code>#include &lt;stdio.h&gt;
+<pre height="70vh"><code id="code-block6" class="language-C">#include &lt;stdio.h&gt;
 
-int main(void) {
-    int x = -7;
-    int y = 2;
-    int z = x % y;
-    printf("%d\n", z);
-    return 0;
-}
-//Output: The program will print -1, which is the result of -7 % 2. In C, the sign of the result of the modulus operation follows the sign of the dividend, 
-not the divisor. This can lead to unexpected results with negative numbers.</pre><button class="buts btn" id="btn-copy6" style="padding:6px" data-clipboard-target="#code-block6">Copy
+    int main(void) {
+        int x = -7;
+        int y = 2;
+        int z = x % y;
+        printf("%d\n", z);
+        return 0;
+    }
+    //Output: The program will print -1, which is the result of -7 % 2. In C, the sign of the result of the modulus operation follows the sign of the dividend, 
+    not the divisor. This can lead to unexpected results with negative numbers.</code></pre><button class="buts btn" id="btn-copy6" style="padding:6px" data-clipboard-target="#code-block6">Copy
 Code</button><br><br>
 <h3>print(1/0) results in an error called "ZeroDivisionError". When you attempt to divide a number by zero, it leads to an undefined mathematical operation because division by zero is not defined. Python, like many programming languages, raises a "ZeroDivisionError" exception to indicate that you're trying to perform an invalid division operation.</h3>
-<pre height="70vh"><code id="code-block7" class="language-python"></code>print(1/0)</pre><button class="buts btn" id="btn-copy7" style="padding:6px" data-clipboard-target="#code-block7">Copy
+<pre height="70vh"><code id="code-block7" class="language-python">print(1/0)</code></pre><button class="buts btn" id="btn-copy7" style="padding:6px" data-clipboard-target="#code-block7">Copy
 Code</button><br><br>
 <h2>Floating-point precision errors:</h2>
 <h3>Comparing float values for equality can yield unexpected results due to limited precision. It's recommended to compare differences within a small epsilon value.</h3>
 <h3>In this example, even though x and y have very similar values, the comparison x == y returns False. This is because floating-point values have limited precision and may not exactly represent the expected decimal value. To handle such cases, it's recommended to compare the difference between the two values to a small epsilon value, as shown in the second comparison abs(x - y) < 1e-10.</h3>
-<pre height="70vh"><code id="code-block7" class="language-python"></code>x = 0.1 + 0.1 + 0.1
+<pre height="70vh"><code id="code-block7" class="language-python">x = 0.1 + 0.1 + 0.1
 y = 0.3
 print(x == y) # Output: False
-print(abs(x - y) < 1e-10) # Output: True</pre><button class="buts btn" id="btn-copy7" style="padding:6px" data-clipboard-target="#code-block7">Copy
+print(abs(x - y) < 1e-10) # Output: True</code></pre><button class="buts btn" id="btn-copy7" style="padding:6px" data-clipboard-target="#code-block7">Copy
 Code</button><br><br>
 
 <h1>Java</h1>
 <h2>Integer caching:</h2>
 <h3>Java caches Integer values in a specific range. This caching can affect equality comparisons for certain values.</h3>
 <h3>In this example, The program will print true for the first comparison, and false for the second comparison. This is due to the way that Java caches Integer values in the range [-128, 127]. When the program compares i1 and i2, it's comparing two references to the same cached object, so the result is true. But when it compares i3 and i4, it's comparing two separate Integer objects that have the same value, so the result is false.</h3>
-<pre height="70vh"><code id="code-block8" class="language-java"></code>public class Main {
+<pre height="70vh"><code id="code-block8" class="language-java">public class Main {
     public static void main(String[] args) {
       Integer i1 = 127;
       Integer i2 = 127;
@@ -108,19 +108,19 @@ Code</button><br><br>
       Integer i4 = 128;
       System.out.println(i3 == i4); //Output: False
     }
-  }</pre><button class="buts btn" id="btn-copy8" style="padding:6px" data-clipboard-target="#code-block8">Copy
+}</code></pre><button class="buts btn" id="btn-copy8" style="padding:6px" data-clipboard-target="#code-block8">Copy
 Code</button><br><br>
 <h2>Modulus operator behavior:</h2>
 <h3>The modulus operator % in Java follows the sign of the dividend, which can lead to unexpected results with negative numbers.</h3>
 <h3>In this example, The program will print -1, which is the result of -7 % 2. In Java, the sign of the result of the modulus operation follows the sign of the dividend.</h3>
-<pre height="70vh"><code id="code-block9" class="language-java"></code>public class Main {
+<pre height="70vh"><code id="code-block9" class="language-java">public class Main {
     public static void main(String[] args) {
       int x = -7;
       int y = 2;
       int z = x % y;
       System.out.println(z);
     }
-  }</pre><button class="buts btn" id="btn-copy9" style="padding:6px" data-clipboard-target="#code-block9">Copy
+}</code></pre><button class="buts btn" id="btn-copy9" style="padding:6px" data-clipboard-target="#code-block9">Copy
 Code</button><br><br>
  
             <h2>Conclusion</h2>
