@@ -1,110 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5787126823461425"
-        crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="How to make a Comment & Extra Space remover using Python">
-    <meta name="keywords" content="Python, Learn Python, Python Projects, Comment Remover, Using Python">
-    <title>Make Comment & Extra space remover using Python - UpSkillWithMe</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/blogpost.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../prism/prism.css">
-    <script src="../prism/prism.js"></script>
-    <link rel="icon" type="image/ico" href="../images/logo.png">
-</head>
-
-<body>
-    <header class="header"><a href="../index.html" class="logo">UpSkillWithMe.<span class="animate"
-                style="--i:1"></span></a>
-        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span></div>
-        <nav class="navbar"><a href="../index.html">Home</a> <a href="../index.html#about">About</a> <a
-                href="../index.html#skills">Skills</a> <a href="../index.html#contact">Contact</a> <a
-                href="../blogs.html">Blogs</a> <span class="active-nav"></span> <span class="animate"
-                style="--i:2"></span></nav>
-    </header>
-    <div class="blog">
-        <div class="content">
-            <h1 style="text-align:left"><b>Make a Comment remover and Extra space remover using Python</b></h1>
-            <h2>Introduction</h2>
-            <h3>Click&nbsp;<a href="https://youtube.com/shorts/QmQzqF5fdgw" target="_blank">here</a> to see the short
-                video of this tutorial. In this blog, Learn <b>how to make a Comment remover and Extra space remover using Python.</b> You can encounter comments that offer explanations or annotations when dealing with code files, especially those created in programming languages like Python, C++, Java, JavaScript, or HTML. Although they are useful during development, comments are frequently superfluous in the finished codebase. In some circumstances, deleting comments can aid in file size reduction and enhance code readability. In this lesson, we'll look at a Python script that lets you quickly and simply remove comments from a file.</h3><br>
-            <h2>Code Explanation</h2>
-            <h3 style="text-align:left">The shutil and re modules, which are used for file operations and regular expressions, respectively, are imported by this line.</h3><br>
-            <pre height="70vh"><code id="code-block1" class="language-python">import shutil
-import re</code></pre><button class="buts btn" id="btn-copy1" style="padding:6px"
-                data-clipboard-target="#code-block1">Copy Code</button><br><br>
-            <h3 style="text-align:left">This line defines the method remove_comments, which accepts the parameters file_name and, optionally, remove_blank_lines.</h3>
-            <pre height="70vh"><code id="code-block2" class="language-python">def remove_comments(file_name, remove_blank_lines=False):</code></pre><button class="buts btn" id="btn-copy2" style="padding:6px"
-                data-clipboard-target="#code-block2">Copy Code</button><br><br>
-            <h3 style="text-align:left">These lines create a duplicate file with a modified name by splitting the file_name parameter, appending "_." and the file extension, and then using shutil.copyfile() to create the duplicate.</h3><br>
-            <pre height="70vh"><code id="code-block3" class="language-python">try:
+<!DOCTYPE html><html lang="en"><head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5787126823461425" crossorigin="anonymous"></script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="How to make a Comment & Extra Space remover using Python"><meta name="keywords" content="Python, Learn Python, Python Projects, Comment Remover, Using Python"><title>Make Comment & Extra space remover using Python - UpSkillWithMe</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/blogpost.css"><link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"><link rel="stylesheet" href="../prism/prism.css"><script src="../prism/prism.js"></script><link rel="icon" type="image/ico" href="../images/logo.png"></head><body><header class="header"><a href="../index.html" class="logo">UpSkillWithMe.<span class="animate" style="--i:1"></span></a><div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span></div><nav class="navbar"><a href="../index.html">Home</a> <a href="../index.html#about">About</a> <a href="../index.html#skills">Skills</a> <a href="../index.html#contact">Contact</a> <a href="../blogs.html">Blogs</a> <span class="active-nav"></span> <span class="animate" style="--i:2"></span></nav></header><div class="blog"><div class="content"><h1 style="text-align:left"><b>Make a Comment remover and Extra space remover using Python</b></h1><h2>Introduction</h2><h3>Click&nbsp;<a href="https://youtube.com/shorts/QmQzqF5fdgw" target="_blank">here</a> to see the short video of this tutorial. In this blog, Learn <b>how to make a Comment remover and Extra space remover using Python.</b> You can encounter comments that offer explanations or annotations when dealing with code files, especially those created in programming languages like Python, C++, Java, JavaScript, or HTML. Although they are useful during development, comments are frequently superfluous in the finished codebase. In some circumstances, deleting comments can aid in file size reduction and enhance code readability. In this lesson, we'll look at a Python script that lets you quickly and simply remove comments from a file.</h3><br><h2>Code Explanation</h2><h3 style="text-align:left">The shutil and re modules, which are used for file operations and regular expressions, respectively, are imported by this line.</h3><br><pre height="70vh"><code id="code-block1" class="language-python">import shutil
+import re</code></pre><button class="buts btn" id="btn-copy1" style="padding:6px" data-clipboard-target="#code-block1">Copy Code</button><br><br><h3 style="text-align:left">This line defines the method remove_comments, which accepts the parameters file_name and, optionally, remove_blank_lines.</h3><pre height="70vh"><code id="code-block2" class="language-python">def remove_comments(file_name, remove_blank_lines=False):</code></pre><button class="buts btn" id="btn-copy2" style="padding:6px" data-clipboard-target="#code-block2">Copy Code</button><br><br><h3 style="text-align:left">These lines create a duplicate file with a modified name by splitting the file_name parameter, appending "_." and the file extension, and then using shutil.copyfile() to create the duplicate.</h3><br><pre height="70vh"><code id="code-block3" class="language-python">try:
     copy_file_name = file_name.split(".")[0] + "_." + file_name.split(".")[1]
-    shutil.copyfile(file_name, copy_file_name)</code></pre><button class="buts btn" id="btn-copy3" style="padding:6px"
-                data-clipboard-target="#code-block3">Copy Code</button><br><br>
-            <h3 style="text-align:left">This line opens the duplicate file in read mode and reads its contents into the contents variable.</h3><br>
-            <pre height="70vh"><code id="code-block4" class="language-python">    with open(copy_file_name, 'r') as f:
-    contents = f.read()</code></pre><button class="buts btn" id="btn-copy4" style="padding:6px" data-clipboard-target="#code-block4">Copy
-                Code</button><br><br>
-            <h3 style="text-align:left">This line calculates the total number of lines in the file before removing comments by splitting the contents string at newline characters and counting the resulting list's length.</h3><br>
-            <pre height="70vh"><code id="code-block5" class="language-python">    total_lines_before = len(contents.split("\n"))</code></pre><button
-                class="buts btn" id="btn-copy5" style="padding:6px" data-clipboard-target="#code-block5">Copy
-                Code</button><br><br>
-            <h3 style="text-align:left">This line appends a newline character to the end of the contents string to ensure that the last line of code is captured correctly.</h3><br>
-            <pre height="70vh"><code id="code-block6" class="language-python">    contents += '\n'</code></pre><button class="buts btn"
-                id="btn-copy6" style="padding:6px" data-clipboard-target="#code-block6">Copy Code</button><br>
-            <h3 style="text-align:left">This defines a list named single_line_comments that contains tuples. Each tuple consists of a regular expression pattern and a replacement string. These patterns are used to match single-line comments in different programming languages.</h3><br>
-            <pre height="70vh"><code id="code-block7" class="language-python">    single_line_comments = [
+    shutil.copyfile(file_name, copy_file_name)</code></pre><button class="buts btn" id="btn-copy3" style="padding:6px" data-clipboard-target="#code-block3">Copy Code</button><br><br><h3 style="text-align:left">This line opens the duplicate file in read mode and reads its contents into the contents variable.</h3><br><pre height="70vh"><code id="code-block4" class="language-python">    with open(copy_file_name, 'r') as f:
+    contents = f.read()</code></pre><button class="buts btn" id="btn-copy4" style="padding:6px" data-clipboard-target="#code-block4">Copy Code</button><br><br><h3 style="text-align:left">This line calculates the total number of lines in the file before removing comments by splitting the contents string at newline characters and counting the resulting list's length.</h3><br><pre height="70vh"><code id="code-block5" class="language-python">    total_lines_before = len(contents.split("\n"))</code></pre><button class="buts btn" id="btn-copy5" style="padding:6px" data-clipboard-target="#code-block5">Copy Code</button><br><br><h3 style="text-align:left">This line appends a newline character to the end of the contents string to ensure that the last line of code is captured correctly.</h3><br><pre height="70vh"><code id="code-block6" class="language-python">    contents += '\n'</code></pre><button class="buts btn" id="btn-copy6" style="padding:6px" data-clipboard-target="#code-block6">Copy Code</button><br><h3 style="text-align:left">This defines a list named single_line_comments that contains tuples. Each tuple consists of a regular expression pattern and a replacement string. These patterns are used to match single-line comments in different programming languages.</h3><br><pre height="70vh"><code id="code-block7" class="language-python">    single_line_comments = [
                 (re.compile(r'#.*'), '\n'),
                 (re.compile(r'//.*'), '\n'),
                 (re.compile(r'<!--.*-->'), ''),
                 (re.compile(r'\/\*.*\*\/'), ''),
-            ]</code></pre><button class="buts btn" id="btn-copy7" style="padding:6px"
-                data-clipboard-target="#code-block7">Copy Code</button><br><br>
-            <h3 style="text-align:left">Similar to single_line_comments, this list defines tuples for matching and removing multiline comments using regular expressions.</h3><br>
-            <pre height="70vh"><code id="code-block8" class="language-python">    multiline_comments = [
+            ]</code></pre><button class="buts btn" id="btn-copy7" style="padding:6px" data-clipboard-target="#code-block7">Copy Code</button><br><br><h3 style="text-align:left">Similar to single_line_comments, this list defines tuples for matching and removing multiline comments using regular expressions.</h3><br><pre height="70vh"><code id="code-block8" class="language-python">    multiline_comments = [
                 (re.compile(r'/\*.*\*/', re.DOTALL), ''),
                 (re.compile(r'<!--.*-->', re.DOTALL), ''),
                 (re.compile(r'(\'\'\'.*\'\'\')|(\"\"\".*\"\"\")', re.DOTALL), ''),
-            ]</code></pre><button class="buts btn" id="btn-copy8" style="padding:6px"
-                data-clipboard-target="#code-block8">Copy Code</button><br>
-            <h3 style="text-align:left">This loop iterates through both single_line_comments and multiline_comments lists and applies the regex substitutions to remove the corresponding comments from the contents string.</h3><br>
-            <pre height="70vh"><code id="code-block9" class="language-python">    for regex, replacement in single_line_comments + multiline_comments:
-                contents = regex.sub(replacement, contents)</code></pre><button class="buts btn" id="btn-copy9" style="padding:6px"
-                data-clipboard-target="#code-block9">Copy Code</button><br>
-            <h3 style="text-align:left">If remove_blank_lines is set to True, this line uses a regex pattern to match consecutive blank lines and replaces them with a single newline character.</h3><br>
-            <pre height="70vh"><code id="code-block10" class="language-python">    if remove_blank_lines:
-                contents = re.sub(r'\n\s*\n', '\n', contents)</code></pre><button class="buts btn" id="btn-copy10" style="padding:6px"
-                data-clipboard-target="#code-block10">Copy Code</button><br>
-            <h3 style="text-align:left">This line removes any leading or trailing newline characters from the contents string.</h3><br>
-            <pre height="70vh"><code id="code-block11" class="language-python">    contents=contents.strip('\n')</code></pre><button class="buts btn" id="btn-copy11" style="padding:6px"
-                data-clipboard-target="#code-block11">Copy Code</button><br>
-            <h3 style="text-align:left">This line opens the duplicate file in write mode and writes the modified contents back into the file, effectively replacing its previous content.</h3><br>
-            <pre height="70vh"><code id="code-block12" class="language-python">    with open(copy_file_name, 'w') as f:
-                f.write(contents)</code></pre><button class="buts btn" id="btn-copy12" style="padding:6px"
-                data-clipboard-target="#code-block12">Copy Code</button><br>
-            <h3 style="text-align:left">These lines calculate the total number of lines in the file after removing comments and print both the initial line count (total_lines_before) and the final line count (total_lines_after).</h3><br>
-            <pre height="70vh"><code id="code-block13" class="language-python">    total_lines_after = len(contents.split("\n"))
+            ]</code></pre><button class="buts btn" id="btn-copy8" style="padding:6px" data-clipboard-target="#code-block8">Copy Code</button><br><h3 style="text-align:left">This loop iterates through both single_line_comments and multiline_comments lists and applies the regex substitutions to remove the corresponding comments from the contents string.</h3><br><pre height="70vh"><code id="code-block9" class="language-python">    for regex, replacement in single_line_comments + multiline_comments:
+                contents = regex.sub(replacement, contents)</code></pre><button class="buts btn" id="btn-copy9" style="padding:6px" data-clipboard-target="#code-block9">Copy Code</button><br><h3 style="text-align:left">If remove_blank_lines is set to True, this line uses a regex pattern to match consecutive blank lines and replaces them with a single newline character.</h3><br><pre height="70vh"><code id="code-block10" class="language-python">    if remove_blank_lines:
+                contents = re.sub(r'\n\s*\n', '\n', contents)</code></pre><button class="buts btn" id="btn-copy10" style="padding:6px" data-clipboard-target="#code-block10">Copy Code</button><br><h3 style="text-align:left">This line removes any leading or trailing newline characters from the contents string.</h3><br><pre height="70vh"><code id="code-block11" class="language-python">    contents=contents.strip('\n')</code></pre><button class="buts btn" id="btn-copy11" style="padding:6px" data-clipboard-target="#code-block11">Copy Code</button><br><h3 style="text-align:left">This line opens the duplicate file in write mode and writes the modified contents back into the file, effectively replacing its previous content.</h3><br><pre height="70vh"><code id="code-block12" class="language-python">    with open(copy_file_name, 'w') as f:
+                f.write(contents)</code></pre><button class="buts btn" id="btn-copy12" style="padding:6px" data-clipboard-target="#code-block12">Copy Code</button><br><h3 style="text-align:left">These lines calculate the total number of lines in the file after removing comments and print both the initial line count (total_lines_before) and the final line count (total_lines_after).</h3><br><pre height="70vh"><code id="code-block13" class="language-python">    total_lines_after = len(contents.split("\n"))
                 print(f"Total number of lines before: {total_lines_before}")
-                print(f"Total number of lines after: {total_lines_after}")</code></pre><button class="buts btn" id="btn-copy13" style="padding:6px"
-                data-clipboard-target="#code-block13">Copy Code</button><br>
-            <h3 style="text-align:left">If the file specified by file_name is not found, this exception block is triggered, and an error message is displayed.</h3><br>
-            <pre height="70vh"><code id="code-block14" class="language-python">except FileNotFoundError:
-                print(f"Error: file '{file_name}' not found.")</code></pre><button class="buts btn" id="btn-copy14" style="padding:6px"
-                data-clipboard-target="#code-block14">Copy Code</button><br>
-            <h3 style="text-align:left">This exception block catches any other exceptions that might occur during the execution of the script and displays a generic error message along with the specific exception message.</h3><br>
-            <pre height="70vh"><code id="code-block15" class="language-python">except Exception as e:
-                print(f"An error occurred: {e}")</code></pre><button class="buts btn" id="btn-copy15" style="padding:6px"
-                data-clipboard-target="#code-block15">Copy Code</button><br><br>
-                <h3 style="text-align:left">The remaining lines of code prompt the user for input, asking whether they want to remove blank lines or not, and then call the remove_comments() function with the provided arguments.</h3><br>
-            <h1>Outcome</h1><img src="../images/blog11/Screenshot (405).png" alt="Comment Remover using Python"
-                width="100%"><br>
-            <h1>Full source code</h1>
-            <pre height="70vh"><code id="code-block16" class="language-python">import shutil
+                print(f"Total number of lines after: {total_lines_after}")</code></pre><button class="buts btn" id="btn-copy13" style="padding:6px" data-clipboard-target="#code-block13">Copy Code</button><br><h3 style="text-align:left">If the file specified by file_name is not found, this exception block is triggered, and an error message is displayed.</h3><br><pre height="70vh"><code id="code-block14" class="language-python">except FileNotFoundError:
+                print(f"Error: file '{file_name}' not found.")</code></pre><button class="buts btn" id="btn-copy14" style="padding:6px" data-clipboard-target="#code-block14">Copy Code</button><br><h3 style="text-align:left">This exception block catches any other exceptions that might occur during the execution of the script and displays a generic error message along with the specific exception message.</h3><br><pre height="70vh"><code id="code-block15" class="language-python">except Exception as e:
+                print(f"An error occurred: {e}")</code></pre><button class="buts btn" id="btn-copy15" style="padding:6px" data-clipboard-target="#code-block15">Copy Code</button><br><br><h3 style="text-align:left">The remaining lines of code prompt the user for input, asking whether they want to remove blank lines or not, and then call the remove_comments() function with the provided arguments.</h3><br><h1>Outcome</h1><img src="../images/blog11/Screenshot (405).png" alt="Comment Remover using Python" width="100%"><br><h1>Full source code</h1><pre height="70vh"><code id="code-block16" class="language-python">import shutil
 import re
 
 def remove_comments(file_name, remove_blank_lines=False):
@@ -169,88 +83,4 @@ while True:
     except:
         print("Invalid input. Please enter 'y' or 'n'.")
 
-remove_comments(file_name, remove_blank_lines == "y")</code></pre><button class="buts btn" id="btn-copy16" style="padding:6px"
-                data-clipboard-target="#code-block16">Copy Code</button><br><br>
-            <h2>Conclusion</h2>
-            <h3>The accompanying Python script shows how to delete comments from a specified file. It creates a duplicate file, reads its content, and removes comments using regular expressions and the shutil module.</h3>
-            <h3>By offering the ability to omit blank lines as well, the script offers versatility. It matches and deletes both single-line and multi-line comments that are frequently encountered in programming languages including Python, C++, Java, JavaScript, HTML, and CSS.</h3>
-            <h3>Users can give the file name and decide whether or not to delete blank lines by running the script. Following that, the script executes the required actions, edits the duplicate file, and outputs data regarding the total number of lines before and after comment removal.</h3><br>
-            <h3>Overall, by deleting comments, enhancing readability, and maybe shrinking file size, this script provides a practical technique to preprocess code files. It can be helpful for programmers, code analysis tools, or in any other circumstance where removing comments is needed.</h3><br>
-            <h3>It's crucial to remember that removing comments from source code files can affect the codebase's readability and maintainability. As a result, it is advised to use such a script cautiously and to make sure that a copy of the original file is available.</h3><br>
-            <h3 style="text-align:left">Here we complete this tutorial.</h3>
-            <h3>Do remember to access the playlist of project tutorials by clicking&nbsp;<a
-                    href="https://www.youtube.com/playlist?list=PLaQTtsrRMSvs8fzIuO334Gk4_lozRxvOr" target="_blank"
-                    rel="noopener">here.</a></h3>
-            <h3 style="text-align:left"><strong>Thank you for being with me throughout the tutorial. Meet you in the
-                    next tutorial.</strong></h3><br>
-        </div>
-    </div><!-- //////////////footer/////////////// -->
-    <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2023 by UpSkillWithMe | <a style="color:#fff" href="../terms and conditions.html">Terms
-                    and Conditions</a> |<a style="color:#fff" href="../privacy policy.html"> Privacy Policy</a></p><span
-                class="animate scroll" style="--i:1"></span>
-        </div>
-        <div class="footer-iconTop"><a href="Remove Extra Spaces Program In Python.html"><i class="bx bx-up-arrow-alt"></i></a> <span
-                class="animate scroll" style="--i:3"></span></div>
-    </footer>
-    <script src="../js/blogpost.js"></script>
-    <script src="../js/common.js"></script>
-    <style>
-        .blog {
-            min-height: 641vh
-        }
-
-        @media only screen and (max-height:800px) {
-            .blog {
-                min-height: 512vh;
-                margin-top: 8%
-            }
-        }
-
-        @media only screen and (max-height:600px) {
-            .blog {
-                margin-top: 9%;
-                min-height: 596vh
-            }
-        }
-
-        @media only screen and (max-width:912px) {
-            .blog {
-                min-height: 403vh;
-                margin-top: 8%;
-            }
-        }
-
-        @media only screen and (max-width:820px) {
-            .blog {
-                min-height: 476vh;
-                margin-top: 11%;
-            }
-        }
-
-        @media only screen and (max-width:768px) {
-            .blog {
-                margin-top: 18%
-            }
-
-            .content {
-                width: 80%
-            }
-        }
-
-        @media only screen and (max-width:414px) {
-            .blog {
-                min-height: 399vh
-            }
-        }
-
-        @media only screen and (max-width:280px) {
-            .blog {
-                margin-top: 34%
-            }
-        }
-    </style>
-</body>
-
-</html>
+remove_comments(file_name, remove_blank_lines == "y")</code></pre><button class="buts btn" id="btn-copy16" style="padding:6px" data-clipboard-target="#code-block16">Copy Code</button><br><br><h2>Conclusion</h2><h3>The accompanying Python script shows how to delete comments from a specified file. It creates a duplicate file, reads its content, and removes comments using regular expressions and the shutil module.</h3><h3>By offering the ability to omit blank lines as well, the script offers versatility. It matches and deletes both single-line and multi-line comments that are frequently encountered in programming languages including Python, C++, Java, JavaScript, HTML, and CSS.</h3><h3>Users can give the file name and decide whether or not to delete blank lines by running the script. Following that, the script executes the required actions, edits the duplicate file, and outputs data regarding the total number of lines before and after comment removal.</h3><br><h3>Overall, by deleting comments, enhancing readability, and maybe shrinking file size, this script provides a practical technique to preprocess code files. It can be helpful for programmers, code analysis tools, or in any other circumstance where removing comments is needed.</h3><br><h3>It's crucial to remember that removing comments from source code files can affect the codebase's readability and maintainability. As a result, it is advised to use such a script cautiously and to make sure that a copy of the original file is available.</h3><br><h3 style="text-align:left">Here we complete this tutorial.</h3><h3>Do remember to access the playlist of project tutorials by clicking&nbsp;<a href="https://www.youtube.com/playlist?list=PLaQTtsrRMSvs8fzIuO334Gk4_lozRxvOr" target="_blank" rel="noopener">here.</a></h3><h3 style="text-align:left"><strong>Thank you for being with me throughout the tutorial. Meet you in the next tutorial.</strong></h3><br></div></div><!-- //////////////footer/////////////// --><footer class="footer"><div class="footer-text"><p>Copyright &copy; 2023 by UpSkillWithMe | <a style="color:#fff" href="../terms and conditions.html">Terms and Conditions</a> |<a style="color:#fff" href="../privacy policy.html"> Privacy Policy</a></p><span class="animate scroll" style="--i:1"></span></div><div class="footer-iconTop"><a href="Remove Extra Spaces Program In Python.html"><i class="bx bx-up-arrow-alt"></i></a> <span class="animate scroll" style="--i:3"></span></div></footer><script src="../js/blogpost.js"></script><script src="../js/common.js"></script><style>.blog{min-height:641vh}@media only screen and (max-height:800px){.blog{min-height:512vh;margin-top:8%}}@media only screen and (max-height:600px){.blog{margin-top:9%;min-height:596vh}}@media only screen and (max-width:912px){.blog{min-height:403vh;margin-top:8%}}@media only screen and (max-width:820px){.blog{min-height:476vh;margin-top:11%}}@media only screen and (max-width:768px){.blog{margin-top:18%}.content{width:80%}}@media only screen and (max-width:414px){.blog{min-height:399vh}}@media only screen and (max-width:280px){.blog{margin-top:34%}}</style></body></html>

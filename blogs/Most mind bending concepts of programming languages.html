@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5787126823461425"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Most mind bending concepts of Programming languages: Java, JavaScript, Python & C language">
+    <meta name="keywords" content="JavaScript, Learn JavaScript, Js, Python, Learn Python, C language, Learn C, Java, Learn Java">
+    <title>Most mind bending concepts of programming languages - UpSkillWithMe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blogpost.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../prism/prism.css">
+    <script src="../prism/prism.js"></script>
+    <link rel="icon" type="image/ico" href="../images/logo.png">
+</head>
+
+<body>
+    <header class="header"><a href="../index.html" class="logo">UpSkillWithMe.<span class="animate"
+                style="--i:1"></span></a>
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span></div>
+        <nav class="navbar"><a href="../index.html">Home</a> <a href="../index.html#about">About</a> <a
+                href="../index.html#skills">Skills</a> <a href="../index.html#contact">Contact</a> <a
+                href="../blogs.html">Blogs</a> <span class="active-nav"></span> <span class="animate"
+                style="--i:2"></span></nav>
+    </header>
+    <div class="blog">
+        <div class="content">
+            <h1 style="text-align:left"><b>JavaScript, Python, C, and Java: Most mind bending concepts of programming languages</b></h1>
+            <h2>Introduction</h2>
+            <h3>Click&nbsp;<a href="https://youtube.com/shorts/QmQzqF5fdgw" target="_blank">here</a> to see the short
+                video of this tutorial. Programming languages are effective tools that help developers create programmes and find solutions to issues. Each language, however, has special characteristics and quirks that may produce unexpected outcomes. We'll look at several strange JavaScript, Python, C, and Java particularities in this article. We'll look at several code samples, describe how they behave, talk about the results, and make judgements about how to respond to these circumstances.</h3><br>
+                <h1>JavaScript</h1>
+            <h2>Not Understanding the Difference between == and ===:</h2>
+            <h3 style="text-align:left">The difference between == and ===: JavaScript has two equality comparison operators. == checks for equality after type coercion, while === checks for equality without type coercion.</h3><br>
+            <pre height="70vh"><code id="code-block1" class="language-javascript">console.log(null == undefined); // Output: true
+console.log(null === undefined); // Output: false</code></pre><button class="buts btn" id="btn-copy1" style="padding:6px"
+                data-clipboard-target="#code-block1">Copy Code</button><br><br>
+            <h2 style="text-align:left">The types of the operands in JavaScript determine how the + and - operators behave. Let's analyse the two expressions to see why they provide various outcomes:</h2>
+            <h3 style="text-align:left">console.log("11" + 1):</h3>
+            <h3 style="text-align:left">In this expression, the + operator is used between a string "11" and a number 1. When the + operator encounters a string operand, it performs string concatenation instead of addition. Therefore, "11" + 1 results in the concatenation of the string "11" and the string representation of the number 1, which is "1". The resulting string is "111", which is then logged to the console.</h3>
+            <pre height="70vh"><code id="code-block2" class="language-javascript">console.log("11" +1 ) //Output: '111'</code></pre><button class="buts btn" id="btn-copy2" style="padding:6px"
+                data-clipboard-target="#code-block2">Copy Code</button><br><br>
+            <h2 style="text-align:left">console.log("11" - 1):</h2>
+            <h3 style="text-align:left">In this expression, the - operator is used between the string "11" and the number 1. The - operator is typically used for arithmetic subtraction, and it expects both operands to be numbers. When a string operand is used with the - operator, JavaScript attempts to convert the string to a number before performing the subtraction. In this case, the string "11" is successfully converted to the number 11. Therefore, 11 - 1 results in the arithmetic subtraction of the numbers, which is equal to 10. The resulting number, 10, is then logged to the console.</h3><br>
+            <pre height="70vh"><code id="code-block3" class="language-javascript">console.log("11" - 1) //Output: '10'</code></pre><button class="buts btn" id="btn-copy3" style="padding:6px"
+                data-clipboard-target="#code-block3">Copy Code</button><br><br>
+            <h2 style="text-align:left">Understanding NaN:</h2>
+            <h3 style="text-align:left">Understanding NaN: NaN is a special value representing a failed operation. It is not equal to any other value, including itself.</h3><br>
+            <pre height="70vh"><code id="code-block4" class="language-javascript">console.log(NaN == NaN); // Output: false
+console.log(value == NaN); // Output: false
+//Instead, you can use the isNaN() function to check if a value is NaN:
+console.log(isNaN(value));</code></pre><button class="buts btn" id="btn-copy4" style="padding:6px" data-clipboard-target="#code-block4">Copy
+                Code</button><br><br>
+                <h1>C language</h1>
+                <h2 style="text-align:left">Division by zero:</h2>
+                <h3 style="text-align:left">Division by zero: Division by zero results in undefined behavior in C. This can lead to runtime errors or unexpected results.</h3><br>
+                <pre height="70vh"><code id="code-block5" class="language-C">#include &lt;stdio.h&gt;
+
+int main(void) {
+    int x = 1, y = 0;
+    int result = x / y;
+    printf("%d\n", result);
+    return 0;
+}
+//Output: This program will likely produce a runtime error or an unexpected result, as division by zero is undefined in C.</code></pre><button class="buts btn" id="btn-copy5" style="padding:6px" data-clipboard-target="#code-block5">Copy
+Code</button><br><br>
+<h2 style="text-align:left">Modulus operator behavior:</h2><br>
+<h3>The behavior of the modulus operator % with negative numbers may differ from expectations.</h3>
+<pre height="70vh"><code id="code-block6" class="language-C"></code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int x = -7;
+    int y = 2;
+    int z = x % y;
+    printf("%d\n", z);
+    return 0;
+}
+//Output: The program will print -1, which is the result of -7 % 2. In C, the sign of the result of the modulus operation follows the sign of the dividend, 
+not the divisor. This can lead to unexpected results with negative numbers.</pre><button class="buts btn" id="btn-copy6" style="padding:6px" data-clipboard-target="#code-block6">Copy
+Code</button><br><br>
+<h3>print(1/0) results in an error called "ZeroDivisionError". When you attempt to divide a number by zero, it leads to an undefined mathematical operation because division by zero is not defined. Python, like many programming languages, raises a "ZeroDivisionError" exception to indicate that you're trying to perform an invalid division operation.</h3>
+<pre height="70vh"><code id="code-block7" class="language-python"></code>print(1/0)</pre><button class="buts btn" id="btn-copy7" style="padding:6px" data-clipboard-target="#code-block7">Copy
+Code</button><br><br>
+<h2>Floating-point precision errors:</h2>
+<h3>Comparing float values for equality can yield unexpected results due to limited precision. It's recommended to compare differences within a small epsilon value.</h3>
+<h3>In this example, even though x and y have very similar values, the comparison x == y returns False. This is because floating-point values have limited precision and may not exactly represent the expected decimal value. To handle such cases, it's recommended to compare the difference between the two values to a small epsilon value, as shown in the second comparison abs(x - y) < 1e-10.</h3>
+<pre height="70vh"><code id="code-block7" class="language-python"></code>x = 0.1 + 0.1 + 0.1
+y = 0.3
+print(x == y) # Output: False
+print(abs(x - y) < 1e-10) # Output: True</pre><button class="buts btn" id="btn-copy7" style="padding:6px" data-clipboard-target="#code-block7">Copy
+Code</button><br><br>
+
+<h1>Java</h1>
+<h2>Integer caching:</h2>
+<h3>Java caches Integer values in a specific range. This caching can affect equality comparisons for certain values.</h3>
+<h3>In this example, The program will print true for the first comparison, and false for the second comparison. This is due to the way that Java caches Integer values in the range [-128, 127]. When the program compares i1 and i2, it's comparing two references to the same cached object, so the result is true. But when it compares i3 and i4, it's comparing two separate Integer objects that have the same value, so the result is false.</h3>
+<pre height="70vh"><code id="code-block8" class="language-java"></code>public class Main {
+    public static void main(String[] args) {
+      Integer i1 = 127;
+      Integer i2 = 127;
+      System.out.println(i1 == i2); //Output: True
+      
+      Integer i3 = 128;
+      Integer i4 = 128;
+      System.out.println(i3 == i4); //Output: False
+    }
+  }</pre><button class="buts btn" id="btn-copy8" style="padding:6px" data-clipboard-target="#code-block8">Copy
+Code</button><br><br>
+<h2>Modulus operator behavior:</h2>
+<h3>The modulus operator % in Java follows the sign of the dividend, which can lead to unexpected results with negative numbers.</h3>
+<h3>In this example, The program will print -1, which is the result of -7 % 2. In Java, the sign of the result of the modulus operation follows the sign of the dividend.</h3>
+<pre height="70vh"><code id="code-block9" class="language-java"></code>public class Main {
+    public static void main(String[] args) {
+      int x = -7;
+      int y = 2;
+      int z = x % y;
+      System.out.println(z);
+    }
+  }</pre><button class="buts btn" id="btn-copy9" style="padding:6px" data-clipboard-target="#code-block9">Copy
+Code</button><br><br>
+ 
+            <h2>Conclusion</h2>
+            <h3>It's crucial for developers to be aware of the specific features and unique features of each programming language in order to produce robust, error-free code. Developers can prevent unexpected results and write more dependable code by understanding the differences between equality operators, handling null and undefined values correctly, using strict mode, selecting the appropriate variable declaration, being cautious with floating-point precision, and taking modulus operator behaviour into consideration.</h3><br>
+            <h3 style="text-align:left">Remember that despite the fact that these peculiarities may at first seem confusing, they are actually a feature of the programming language's architecture and can be mastered with practise and expertise.</h3>
+            <h3 style="text-align:left">Developers may fully utilise JavaScript, Python, C, and Java while avoiding potential problems by being aware of these language-specific details.Happy coding!</h3>
+            <h3>Do remember to access the playlist of project tutorials by clicking&nbsp;<a
+                    href="https://www.youtube.com/playlist?list=PLaQTtsrRMSvs8fzIuO334Gk4_lozRxvOr" target="_blank"
+                    rel="noopener">here.</a></h3>
+            <h3 style="text-align:left"><strong>Thank you for being with me throughout the tutorial. Meet you in the next tutorial.</strong></h3><br>
+        </div>
+    </div><!-- //////////////footer/////////////// -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by UpSkillWithMe | <a style="color:#fff" href="../terms and conditions.html">Terms
+                    and Conditions</a> |<a style="color:#fff" href="../privacy policy.html"> Privacy Policy</a></p><span
+                class="animate scroll" style="--i:1"></span>
+        </div>
+        <div class="footer-iconTop"><a href="Most mind bending concepts of programming languages.html"><i class="bx bx-up-arrow-alt"></i></a> <span
+                class="animate scroll" style="--i:3"></span></div>
+    </footer>
+    <script>Prism.highlightAll();</script>
+    <script src="../js/blogpost.js"></script>
+    <script src="../js/common.js"></script>
+    <style>
+        .blog {
+            min-height: 433vh
+        }
+
+        @media only screen and (max-height:800px) {
+            .blog {
+                min-height: 360vh;
+                margin-top: 8%
+            }
+        }
+
+        @media only screen and (max-height:600px) {
+            .blog {
+                margin-top: 9%;
+                min-height: 442vh
+            }
+        }
+
+        @media only screen and (max-width:912px) {
+            .blog {
+                min-height: 207vh;
+                margin-top: 8%;
+            }
+        }
+
+        @media only screen and (max-width:820px) {
+            .blog {
+                min-height: 252vh;
+                margin-top: 11%;
+            }
+        }
+
+        @media only screen and (max-width:768px) {
+            .blog {
+                margin-top: 18%
+            }
+
+            .content {
+                width: 80%
+            }
+        }
+
+        @media only screen and (max-width:414px) {
+            .blog {
+                min-height: 339vh
+            }
+        }
+
+        @media only screen and (max-width:280px) {
+            .blog {
+                margin-top: 34%
+            }
+        }
+    </style>
+</body>
+
+</html>
